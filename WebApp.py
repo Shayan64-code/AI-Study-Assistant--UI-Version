@@ -8,7 +8,6 @@ st.title("📚 AI Study Assistant")
 client = OpenAI(base_url= "https://openrouter.ai/api/v1",
                 api_key=Keys.KEY1)
 
-
 if "messages" not in st.session_state:
     st.session_state.messages = [{
         "role": "system", "content" : ("You are a kindful study assistant. "
@@ -27,7 +26,7 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
-            st.markdown(prompt)
+        st.markdown(prompt)
 
     try:
         with st.chat_message("assistant"):
